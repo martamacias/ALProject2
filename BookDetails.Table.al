@@ -28,5 +28,6 @@ table 50102 "Book Details"
         {
             Unique = true; //no repetir isbn
         }
+
     }
 }
