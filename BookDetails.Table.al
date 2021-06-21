@@ -17,7 +17,6 @@ table 50102 "Book Details"
         field(60; Excerpt; Text[2048]) { }
         field(70; "Page Count"; Integer) { }
     }
-
     keys
     {
         key(PK; "Item No.", "Line No.")
