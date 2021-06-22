@@ -1,7 +1,6 @@
 table 50102 "Book Details"
 {
     DataClassification = CustomerContent;
-
     fields
     {
         field(1; "Item No."; Code[20])
