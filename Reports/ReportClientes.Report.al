@@ -1,6 +1,8 @@
 report 50100 "Report Clientes"
 {
     CaptionML = ENU = 'Customer report', ESP = 'Reporte de clientes';
+    UsageCategory = ReportsAndAnalysis;
+    ApplicationArea = Basic;
 
     dataset
     {
