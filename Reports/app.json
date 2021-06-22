@@ -1,9 +1,9 @@
 {
   "id": "0c7197cf-1cb4-4f79-953b-73344819ace3",
-  "name": "Reports",
+  "name": "Reports Extension",
   "publisher": "Default publisher",
   "version": "1.0.0.0",
-  "brief": "",
+  "brief": "Extension de creacion de reports",
   "description": "",
   "privacyStatement": "",
   "EULA": "",
