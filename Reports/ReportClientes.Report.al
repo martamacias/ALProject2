@@ -21,7 +21,8 @@ report 50100 "Report Clientes"
 
             trigger OnAfterGetRecord()
             begin
-                Name := NameToUpperCase(Name) //funcion
+                Name := NameToUpperCase(Name);
+                "Search Name" := ValidSearchName("Search Name");
             end;
         }
     }
@@ -47,6 +48,15 @@ report 50100 "Report Clientes"
     begin
         exit(UpperCase(TheName))
     end;
+
+    local procedure ValidSearchName(SName: Text): Text
+    begin
+        if ShowSearchName = true then
+            SName := SName
+        else
+            SName := '';
+    end;
+
     // si quiere mostrar el alias o no, opción de la request page
     var
         ShowSearchName: Boolean;
