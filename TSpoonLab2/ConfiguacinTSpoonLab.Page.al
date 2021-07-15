@@ -17,6 +17,7 @@ page 50100 "Configuación TSpoonLab"
             {
                 field("Url API"; Rec."Url API")
                 {
+                    ToolTip = 'Type here...';
                     ApplicationArea = All;
                     ExtendedDatatype = URL;
                 }

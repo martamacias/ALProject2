@@ -6,6 +6,7 @@ table 50101 "Log Integración TSpoonLab"
     {
         field(10; "No. movimiento"; Integer)
         {
+            AutoIncrement = true;
             DataClassification = ToBeClassified;
             Description = 'PK';
         }

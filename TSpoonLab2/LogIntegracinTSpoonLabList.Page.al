@@ -31,14 +31,11 @@ page 50101 "Log Integración TSpoonLab List"
     {
         area(Processing)
         {
-            action(ActionName)
+            action(Registrar)
             {
                 ApplicationArea = All;
-
-                trigger OnAction()
-                begin
-
-                end;
+                Image = RegisteredDocs;
+                RunObject = Report "Traspasar Log a Histórico";
             }
         }
     }
