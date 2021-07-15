@@ -29,7 +29,4 @@ pageextension 50101 PageExtension50101 extends "Order Processor Role Center"
             }
         }
     }
-
-    var
-        myInt: Integer;
 }

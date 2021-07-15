@@ -1,6 +1,8 @@
 report 50100 "Traspasar Log a Histórico"
 {
     ProcessingOnly = true;
+    UsageCategory = Tasks;
+    ApplicationArea = All;
 
     dataset
     {
@@ -12,27 +14,27 @@ report 50100 "Traspasar Log a Histórico"
 
                 trigger OnAfterGetRecord()
                 begin
-                    Históricodetallelog.INIT;
+                    Históricodetallelog.INIT();
                     Históricodetallelog.TRANSFERFIELDS("Detalle log integr. TSpoonLab");
                     Históricodetallelog.INSERT(TRUE);
                 end;
 
                 trigger OnPostDataItem()
                 begin
-                    "Detalle log integr. TSpoonLab".DELETEALL;
+                    "Detalle log integr. TSpoonLab".DELETEALL();
                 end;
             }
 
             trigger OnAfterGetRecord()
             begin
-                HistóricoLog.INIT;
+                HistóricoLog.INIT();
                 HistóricoLog.TRANSFERFIELDS("Log integración TSpoonLab");
                 HistóricoLog.INSERT(TRUE);
             end;
 
             trigger OnPostDataItem()
             begin
-                "Log integración TSpoonLab".DELETEALL;
+                "Log integración TSpoonLab".DELETEALL();
             end;
         }
     }
@@ -46,7 +48,7 @@ report 50100 "Traspasar Log a Histórico"
 
         trigger OnOpenPage()
         begin
-            FechaFiltro := CalcDate('-1M', WorkDate());
+            FechaFiltro := CalcDate('<-1M>', WorkDate());
 
             "Log integración TSpoonLab".SETFILTER(Estado, 'Error|Procesado');
             "Log integración TSpoonLab".SETFILTER("Fecha inicio", '..%1', FechaFiltro);
@@ -54,13 +56,7 @@ report 50100 "Traspasar Log a Histórico"
     }
 
     var
-        DetallelogintegrTSpoonLab: Record "Detalle log integr. TSpoonLab";
         Históricodetallelog: Record "Histórico detalle log";
         HistóricoLog: Record "Histórico Log";
         FechaFiltro: Date;
-        DiaFiltro: Integer;
-        MesFiltro: Integer;
-        YearFIltro: Integer;
-        EstadoError: Option Creado,Procesado,Error;
-        EstadoProcesado: Option Creado,Procesado,Error;
 }

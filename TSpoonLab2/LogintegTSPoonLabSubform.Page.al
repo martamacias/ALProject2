@@ -3,6 +3,7 @@ page 50103 "Log integ. TSPoonLab Subform"
     Caption = 'Líneas';
     PageType = ListPart;
     SourceTable = "Detalle log integr. TSpoonLab";
+    UsageCategory = None;
 
     layout
     {
@@ -10,30 +11,38 @@ page 50103 "Log integ. TSPoonLab Subform"
         {
             repeater(Group)
             {
-                field("No. movimiento"; Rec."No. movimiento") { }
-                field("No. Línea"; Rec."No. Línea") { }
-                field(Código; Rec.Código) { }
-                field(Descripción; Rec.Descripción) { }
-                field(Cantidad; Rec.Cantidad) { }
-                field(Precio; Rec.Precio) { }
-                field(Estado; Rec.Estado) { }
-                field("Mensaje error"; Rec."Mensaje error") { }
-            }
-        }
-    }
-
-    actions
-    {
-        area(Processing)
-        {
-            action(ActionName)
-            {
-                ApplicationArea = All;
-
-                trigger OnAction()
-                begin
-
-                end;
+                field("No. movimiento"; Rec."No. movimiento")
+                {
+                    ToolTip = 'PK';
+                }
+                field("No. Línea"; Rec."No. Línea")
+                {
+                    ToolTip = 'No. Línea';
+                }
+                field(Código; Rec.Código)
+                {
+                    ToolTip = 'Código';
+                }
+                field(Descripción; Rec.Descripción)
+                {
+                    ToolTip = 'Descripción';
+                }
+                field(Cantidad; Rec.Cantidad)
+                {
+                    ToolTip = 'Cantidad';
+                }
+                field(Precio; Rec.Precio)
+                {
+                    ToolTip = 'Precio';
+                }
+                field(Estado; Rec.Estado)
+                {
+                    ToolTip = 'Estado';
+                }
+                field("Mensaje error"; Rec."Mensaje error")
+                {
+                    ToolTip = 'Mensaje error';
+                }
             }
         }
     }
