@@ -26,11 +26,11 @@ table 50101 "Log Integración TSpoonLab"
             Description = 'Creado,Procesado,Error';
             OptionMembers = Creado,Procesado,Error;
         }
-        field(50; "Mensaje error"; Blob)
+        field(50; "Mensaje error"; Text[1024])
         {
             DataClassification = ToBeClassified;
         }
-        field(60; "JSON Respuesta"; Blob)
+        field(60; "JSON Respuesta"; Text[1024])
         {
             DataClassification = ToBeClassified;
         }

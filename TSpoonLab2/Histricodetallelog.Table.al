@@ -38,7 +38,7 @@ table 50104 "Histórico detalle log"
             DataClassification = ToBeClassified;
             OptionMembers = Creado,Procesado,Error;
         }
-        field(80; "Mensaje error"; Blob)
+        field(80; "Mensaje error"; Text[1024])
         {
             DataClassification = ToBeClassified;
         }
