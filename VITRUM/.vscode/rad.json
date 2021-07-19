@@ -1,1 +1,1 @@
-﻿{"Added":[],"Modified":[],"Removed":[]}
+﻿{"Added":[],"Modified":[{"Id":50200,"Kind":17,"Name":"VendorExtension","PackagePath":"/src/VendorExtension.TableExt.al"},{"Id":50200,"Kind":11,"Name":"VendorMgt","PackagePath":"/src/VendorMgt.Codeunit.al"}],"Removed":[]}
