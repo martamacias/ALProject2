@@ -1,0 +1,26 @@
+{
+  "id": "c8fb099b-ddf6-4071-9525-6f1a5aad323f",
+  "name": "Donations",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "18.0.0.0",
+  "idRanges": [
+    {
+      "from": 50000,
+      "to": 50049
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://Donations.com/help/",
+  "showMyCode": true,
+  "runtime": "7.0"
+}
