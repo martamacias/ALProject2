@@ -1,8 +1,8 @@
-pageextension 50201 ItemCardExtension extends "Item Card"
+pageextension 50202 ItemListExtension extends "Item List"
 {
     layout
     {
-        addafter("Qty. on Assembly Order")
+        addafter(InventoryField)
         {
             field("Qty. Available"; TotalAvailable)
             {
