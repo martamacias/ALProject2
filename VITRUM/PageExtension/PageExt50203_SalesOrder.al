@@ -15,5 +15,24 @@ pageextension 50203 "Sales Order Ext" extends "Sales Order"
                 Image = SKU;
             }
         }
+        modify(Post)
+        {
+            trigger OnAfterAction()
+            var
+                bulks: Record "Shipment Bulks";
+            //cubulks: Codeunit BulksMgt;
+
+            begin
+                Message(Rec."No.");
+                Message(Rec."Last Shipping No.");
+
+                bulks.Init();
+                bulks.SetFilter("Order No.", Rec."No.");
+                Message(bulks."Order No.");
+
+                bulks."Shipment No." := Rec."Last Shipping No.";
+                bulks.Modify(true);
+            end;
+        }
     }
 }

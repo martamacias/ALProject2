@@ -5,7 +5,7 @@ page 50200 "Shipment Bulks List"
     UsageCategory = Lists;
     SourceTable = "Shipment Bulks";
     CaptionML = ENU = 'Shipment Bulks', ESP = 'Bultos Expedición';
-
+    SaveValues = true;
     layout
     {
         area(Content)
@@ -42,15 +42,4 @@ page 50200 "Shipment Bulks List"
             }
         }
     }
-
-    trigger OnOpenPage()
-    begin
-        if Sales.Get() then begin
-            Rec."Order No." := Sales."No.";
-            Rec.Modify();
-        end;
-    end;
-
-    var
-        Sales: Record "Sales Header";
 }
