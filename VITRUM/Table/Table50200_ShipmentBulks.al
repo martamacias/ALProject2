@@ -40,4 +40,10 @@ table 50200 "Shipment Bulks"
         }
         key(Key2; "Shipment No.") { }
     }
+
+    trigger OnDelete()
+    begin
+        if Rec."Shipment No." <> '' then
+            Error('No se puede eliminar el registro porque contiene el número de albarán');
+    end;
 }
