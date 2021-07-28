@@ -1,0 +1,26 @@
+{
+  "id": "88e5f765-8613-43af-bbbb-1b6a05d15418",
+  "name": "Ejercicios",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "18.0.0.0",
+  "idRanges": [
+    {
+      "from": 50300,
+      "to": 50349
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://Ejercicios.com/help/",
+  "showMyCode": true,
+  "runtime": "7.0"
+}
