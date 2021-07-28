@@ -10,6 +10,7 @@ pageextension 50204 SalesShipmentExt extends "Posted Sales Shipment"
                 RunObject = Page "Shipment Bulks List";
                 RunPageLink = "Shipment No." = field("No.");
                 RunPageMode = View;
+
                 ToolTip = 'Ejecuta la acción Bulks:';
                 Image = SKU;
             }
