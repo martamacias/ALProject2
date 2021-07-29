@@ -7,12 +7,22 @@ pageextension 50204 SalesShipmentExt extends "Posted Sales Shipment"
             action(Bulks)
             {
                 CaptionML = ENU = 'Bulks', ESP = 'Bultos';
-                RunObject = Page "Shipment Bulks List";
-                RunPageLink = "Shipment No." = field("No.");
-                RunPageMode = View;
-
                 ToolTip = 'Ejecuta la acción Bulks:';
                 Image = SKU;
+
+                trigger OnAction()
+                var
+                    tbulks: Record "Shipment Bulks";
+                    pbulks: Page "Shipment Bulks List";
+
+                begin
+                    tbulks.Init();
+                    tbulks.SetFilter("Shipment No.", Rec."No.");
+                    tbulks.FindSet();
+                    pbulks.SetTableView(tbulks);
+                    pbulks.Editable(false);
+                    pbulks.Run();
+                end;
             }
         }
     }
