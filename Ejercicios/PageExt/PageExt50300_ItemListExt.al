@@ -10,7 +10,7 @@ pageextension 50300 ItemListExt extends "Item List"
     {
         addlast(Item)
         {
-            action(InventoryButton)
+            action(InventoryButton) // Ejercicio 1
             {
                 CaptionML = ENU = 'Available Inventory', ESP = 'Inventario Disponible';
                 Image = Inventory;

@@ -1,5 +1,7 @@
 // Ejercicio 2
-pageextension 50301 CustomerLstExt extends "Customer List"
+// Ejercicio 3
+
+pageextension 50301 CustomerListExt extends "Customer List"
 {
     layout
     {
@@ -10,7 +12,7 @@ pageextension 50301 CustomerLstExt extends "Customer List"
     {
         addlast("&Customer")
         {
-            action(LastInvoice)
+            action(LastInvoice) // Ejercicio 2
             {
                 CaptionML = ENU = 'Last Invoice', ESP = 'Última factura';
                 Image = SalesInvoice;
@@ -33,7 +35,7 @@ pageextension 50301 CustomerLstExt extends "Customer List"
                         Error(text001, Rec."No.");
                 end;
             }
-            action(Last3Invoices)
+            action(Last3Invoices) // Ejercicio 3
             {
                 CaptionML = ENU = 'Last 3 invoices', ESP = 'Últimas 3 facturas';
                 Image = JobSalesInvoice;
@@ -60,11 +62,9 @@ pageextension 50301 CustomerLstExt extends "Customer List"
                             num := num + 1;
                         until (num = 3) or (invtable.Next() = 0);
                         if num = 3 then begin
-
                             invtable.MarkedOnly(true);
                             invtable.FindSet();
                             invoices.SetTableView(invtable);
-                            //invoices.SetRecord(invtable);
                             invoices.Run();
                         end
                         else
@@ -76,7 +76,4 @@ pageextension 50301 CustomerLstExt extends "Customer List"
             }
         }
     }
-
-    var
-    //myInt: Integer;
 }
