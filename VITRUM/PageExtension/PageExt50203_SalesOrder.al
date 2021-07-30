@@ -7,9 +7,6 @@ pageextension 50203 "Sales Order Ext" extends "Sales Order"
             action(Bulks)
             {
                 CaptionML = ENU = 'Bulks', ESP = 'Bultos';
-                //RunObject = Page "Shipment Bulks List";
-                //RunPageLink = "Order No." = field("No.");
-                //RunPageMode = Edit;
                 ToolTip = 'Ejecuta la acción Bulks:';
                 Image = SKU;
 
@@ -19,6 +16,9 @@ pageextension 50203 "Sales Order Ext" extends "Sales Order"
                     pbulks: Page "Shipment Bulks List";
 
                 begin
+                    tbulks.Init();
+                    tbulks.SetFilter("Order No.", Rec."No.");
+                    pbulks.SetTableView(tbulks);
                     pbulks.seteditable();
                     pbulks.Run();
                 end;
