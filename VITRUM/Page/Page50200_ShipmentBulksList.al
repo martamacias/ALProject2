@@ -6,6 +6,7 @@ page 50200 "Shipment Bulks List"
     SourceTable = "Shipment Bulks";
     CaptionML = ENU = 'Shipment Bulks', ESP = 'Bultos Expedición';
     SaveValues = true;
+    Editable = true;
     layout
     {
         area(Content)
@@ -42,4 +43,16 @@ page 50200 "Shipment Bulks List"
             }
         }
     }
+    var
+        g_boolEditable: Boolean;
+
+    trigger OnOpenPage()
+    begin
+        CurrPage.Editable(g_boolEditable);
+    end;
+
+    procedure seteditable()
+    begin
+        g_boolEditable := true
+    end;
 }
