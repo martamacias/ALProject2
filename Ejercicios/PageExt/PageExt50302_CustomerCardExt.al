@@ -8,15 +8,8 @@ pageextension 50302 "Customer Card Execises" extends "Customer Card"
             field(InventoryWarning; Rec.InventoryWarning)
             {
                 ApplicationArea = All;
+                ToolTip = 'Especifica el valor del campo InventoryWarning.';
             }
         }
     }
-
-    /*actions
-    {
-        // Add changes to page actions here
-    }
-    
-    var
-        myInt: Integer;*/
 }

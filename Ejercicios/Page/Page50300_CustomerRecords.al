@@ -34,22 +34,69 @@ page 50300 "Customer Records List"
                 {
                     ApplicationArea = All;
                     ToolTip = 'Especifica el valor del campo LastInvoice.';
+                    trigger OnDrillDown()
+                    var
+                        tinvoice: Record "Sales Invoice Header";
+                        pinvoice: Page "Posted Sales Invoice";
+                    begin
+                        tinvoice.Init();
+                        tinvoice.SetFilter("No.", Rec.LastInvoice);
+                        if tinvoice.FindFirst() then begin
+                            pinvoice.SetTableView(tinvoice);
+                            pinvoice.Run();
+                        end
+                    end;
                 }
                 field(LastShipment; Rec.LastShipment)
                 {
                     ApplicationArea = All;
                     ToolTip = 'Especifica el valor del campo LastShipment.';
+                    trigger OnDrillDown()
+                    var
+                        tshipment: Record "Sales Shipment Header";
+                        pshipment: Page "Posted Sales Shipment";
+                    begin
+                        tshipment.Init();
+                        tshipment.SetFilter("No.", Rec.LastShipment);
+                        if tshipment.FindFirst() then begin
+                            pshipment.SetTableView(tshipment);
+                            pshipment.Run();
+                        end
+                    end;
                 }
                 field(LastOrder; Rec.LastOrder)
                 {
                     ApplicationArea = All;
                     ToolTip = 'Especifica el valor del campo LastOrder.';
-
+                    trigger OnDrillDown()
+                    var
+                        tsalesorder: Record "Sales Header";
+                        psalesorder: Page "Sales Order";
+                    begin
+                        tsalesorder.Init();
+                        tsalesorder.SetFilter("No.", Rec.LastOrder);
+                        if tsalesorder.FindFirst() then begin
+                            psalesorder.SetTableView(tsalesorder);
+                            psalesorder.Run();
+                        end
+                    end;
                 }
                 field(LastCreditMemo; Rec.LastCreditMemo)
                 {
                     ApplicationArea = All;
                     ToolTip = 'Especifica el valor del campo LastCreditMemo.';
+                    trigger OnDrillDown()
+                    var
+                        tcreditmemo: Record "Sales Header";
+                        pcreditmemo: Page "Sales Credit Memo";
+                    begin
+                        tcreditmemo.Init();
+                        tcreditmemo.SetFilter("No.", Rec.LastCreditMemo);
+                        if tcreditmemo.FindFirst() then begin
+                            pcreditmemo.SetTableView(tcreditmemo);
+                            pcreditmemo.Run();
+                        end
+                    end;
                 }
             }
         }

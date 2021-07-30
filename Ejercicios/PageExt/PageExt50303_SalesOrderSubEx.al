@@ -17,22 +17,14 @@ pageextension 50303 "Sales Order Subform Exercicies" extends "Sales Order Subfor
                 tcust.FindFirst();
                 if tcust.InventoryWarning then begin
                     titem.Init();
-                    titem.SetFilter("No.", Rec."No.");
-                    if titem.FindFirst() then begin
-                        Message('%1', titem.Inventory);
-                        total := (titem.Inventory - Rec.Quantity);
-                        Message(text001, titem."No.", total);
-                    end;
+                    titem.Get(Rec."No.");
+                    titem.SetRange("No.", Rec."No.");
+                    titem.CalcFields(Inventory);
+                    total := (titem.Inventory - Rec.Quantity);
+                    Message(text001, titem."No.", total);
+
                 end;
             end;
         }
     }
-
-    actions
-    {
-        // Add changes to page actions here
-    }
-
-    var
-        myInt: Integer;
 }

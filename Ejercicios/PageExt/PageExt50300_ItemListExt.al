@@ -1,9 +1,17 @@
 // Ejercicio 1
+// Ejercicio 6
 pageextension 50300 ItemListExt extends "Item List"
 {
     layout
     {
-        // Add changes to page layout here
+        addlast(content)
+        {
+            field(PalletType; Rec.PalletType) // Ejercicio 6
+            {
+                ApplicationArea = All;
+                ToolTip = 'Especifica el valor del campo PalletType.';
+            }
+        }
     }
 
     actions
