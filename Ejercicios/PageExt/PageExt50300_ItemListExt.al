@@ -24,6 +24,9 @@ pageextension 50300 ItemListExt extends "Item List"
                 Image = Inventory;
                 ToolTip = 'Ejecuta la acción InventoryButton:';
                 trigger OnAction()
+                var
+                    text001: TextConst ENU = 'The available inventory is %1', ESP = 'El inventario disponible es %1';
+                    text002: TextConst ENU = 'Error: No inventory!', ESP = 'Error: No hay inventario!';
                 begin
                     if Rec.Inventory = 0 then
                         Error(text002)
@@ -33,8 +36,4 @@ pageextension 50300 ItemListExt extends "Item List"
             }
         }
     }
-
-    var
-        text001: TextConst ENU = 'The available inventory is %1', ESP = 'El inventario disponible es %1';
-        text002: TextConst ENU = 'Error: No inventory!', ESP = 'Error: No hay inventario!';
 }
