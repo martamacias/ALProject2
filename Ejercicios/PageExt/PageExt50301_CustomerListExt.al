@@ -48,22 +48,26 @@ pageextension 50301 CustomerListExt extends "Customer List"
                     text001: TextConst ENU = 'The customer %1 has no invoices.', ESP = 'El cliente %1 no tiene facturas.';
                     text002: TextConst ENU = 'The customer %1 does not have 3 invoices', ESP = 'El cliente %1 no tiene 3 facturas.';
                     num: Integer;
-
+                    EndBucle: Boolean;
                 begin
                     invtable.Init();
                     invtable.SetFilter("Sell-to Customer No.", Rec."No.");
                     invtable.SetAscending("No.", false);
 
                     num := 0;
-                    if invtable.FindFirst() then begin
+                    EndBucle := false;
+                    if invtable.FindSet() then begin
                         repeat
                             invtable.Mark(true);
-                            invtable.Next();
                             num := num + 1;
-                        until (num = 3) or (invtable.Next() = 0);
+                            if num <= 3 then
+                                invtable.Next()
+                            else
+                                EndBucle := true;
+                        until EndBucle;
                         if num = 3 then begin
                             invtable.MarkedOnly(true);
-                            invtable.FindSet();
+                            //invtable.FindSet(); Innecesario
                             invoices.SetTableView(invtable);
                             invoices.Run();
                         end
