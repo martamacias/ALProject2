@@ -39,8 +39,7 @@ page 50300 "Customer Records List"
                         tinvoice: Record "Sales Invoice Header";
                         pinvoice: Page "Posted Sales Invoice";
                     begin
-                        tinvoice.Init();
-                        tinvoice.SetFilter("No.", Rec.LastInvoice);
+                        tinvoice.SetRange("No.", Rec.LastInvoice);
                         if tinvoice.FindFirst() then begin
                             pinvoice.SetTableView(tinvoice);
                             pinvoice.Run();
@@ -152,4 +151,5 @@ page 50300 "Customer Records List"
             }
         }
     }
+
 }
