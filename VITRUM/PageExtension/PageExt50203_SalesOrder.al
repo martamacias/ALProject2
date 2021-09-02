@@ -24,21 +24,5 @@ pageextension 50203 "Sales Order Ext" extends "Sales Order"
                 end;
             }
         }
-        modify(Post)
-        {
-            trigger OnAfterAction()
-            var
-                bulks: Record "Shipment Bulks";
-
-            begin
-                bulks.Init();
-                bulks.SetFilter("Order No.", Rec."No.");
-                if bulks.FindSet() then
-                    repeat
-                        bulks."Shipment No." := Rec."Last Shipping No.";
-                        bulks.Modify(true);
-                    until bulks.Next() = 0;
-            end;
-        }
     }
 }
