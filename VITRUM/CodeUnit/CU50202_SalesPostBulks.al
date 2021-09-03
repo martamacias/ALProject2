@@ -8,8 +8,8 @@ codeunit 50202 SalesPostBulks
         bulks: Record "Shipment Bulks";
     begin
         if SalesShipmentHeader."No." <> '' then begin
-            bulks.Init();
-            bulks.SetFilter("Order No.", SalesHeader."No.");
+            bulks.SetRange("Order No.", SalesHeader."No.");
+            bulks.SetFilter("Shipment No.", '%1', '');
             if bulks.FindSet() then
                 repeat
                     bulks."Shipment No." := SalesShipmentHeader."No.";
